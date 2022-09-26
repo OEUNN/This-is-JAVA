@@ -1,0 +1,22 @@
+package ch15.sec04.exam03;
+
+import java.io.IOException;
+import java.util.Properties;
+
+public class PropertiesExample {
+
+	public static void main(String[] args) throws IOException {
+		Properties properties = new Properties();
+		
+		properties.load(PropertiesExample.class.getResourceAsStream("database.properties"));
+		
+		String driver = properties.getProperty("driver");
+		String url=properties.getProperty("url");
+		String username = properties.getProperty("username");
+		String password=properties.getProperty("password");
+		String admin = properties.getProperty("adime");
+		
+		System.out.println("driver : "+driver);
+	}
+
+}
